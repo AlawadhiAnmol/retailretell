@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -43,26 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
         type();
     }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Animate features on scroll
-    const features = document.querySelectorAll('.feature');
-    const featuresObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.5 });
-
-    features.forEach(feature => {
-        feature.style
+    // ... rest of your JavaScript code ...
+});
