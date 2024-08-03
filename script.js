@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         typedInstance = new Typed(section.querySelector('.typing-text'), {
           strings: [sectionTexts[i]],
-          typeSpeed: 30,
+          typeSpeed: 40,
           backSpeed: 0,
           loop: true,
           showCursor: true,
