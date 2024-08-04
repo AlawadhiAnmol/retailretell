@@ -62,3 +62,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // Change section every 10 seconds
   setInterval(nextSection, 10000);
 });
+// Intersection Observer for revealing features on scroll
+const featureObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('feature-visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.feature').forEach(feature => {
+  featureObserver.observe(feature);
+});
+
+// Smooth scroll to features when nav links are clicked
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Optional: Add a subtle parallax effect to GIFs
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.feature-gif').forEach(gif => {
+    const speed = 0.5;
+    const yPos = -(window.pageYOffset * speed);
+    gif.style.backgroundPositionY = yPos + 'px';
+  });
+});
