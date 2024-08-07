@@ -330,7 +330,7 @@ section {
 
 .pricing-plan:hover li {
   transform: translateX(3px);
-}
+} 
 
 .pricing-plan[data-plan="free"] { animation: float 4s ease-in-out infinite; }
 .pricing-plan[data-plan="growth"] { animation: float 4s ease-in-out infinite 1s; }
