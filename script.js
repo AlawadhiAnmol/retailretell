@@ -63,17 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(nextSection, 10000);
 });
 // Intersection Observer for revealing features on scroll
-// const featureObservser = new IntersectionObserver((entries) => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('feature-visible');
-//     }
-//   });
-// }, { threshold: 0.1 });
+const featureObservser = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('feature-visible');
+    }
+  });
+}, { threshold: 0.1 });
 
-// document.querySelectorAll('.feature').forEach(feature => {
-//   featureObserver.observe(feature);
-// });
+document.querySelectorAll('.feature').forEach(feature => {
+  featureObserver.observe(feature);
+});
 
 // Smooth scroll to features when nav links are clicked
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
