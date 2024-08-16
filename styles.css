@@ -171,7 +171,8 @@ section {
 }
 
 .feature {
-    flex-basis: 30%;
+    display: flex;
+    margin: 1rem;
     padding: 1rem;
     background-color: var(--white);
     border-radius: 10px;
@@ -180,9 +181,6 @@ section {
     text-align: center;
 }
 
-.feature:hover {
-    transform: translateY(-10px);
-}
 .iphone-frame {
     width: 300px;  /* Increased width */
     height: 650px;  /* Increased height */
@@ -480,15 +478,8 @@ section {
   transform: translateY(0);
 }
 
-
-.feature {
-  display: flex;
-  height: 100vh;
-}
-
-.feature-content, .feature-gif {
+.feature-content {
   flex: 1;
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -521,11 +512,15 @@ section {
   color: #333333;
 }
 
+.feature-gif-box {
+  width: 50%;
+}
+
 .feature-gif {
-  background-size: 30%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff;
+  height: 50vh;
+  width: fit-content;
+  display: block;
+  margin: auto;
 }
 
 /* Specific layout for Feature 2 */
@@ -707,20 +702,13 @@ section {
 .main-footer {
   background-color: #333;
   color: #fff;
-  padding: 3rem 0 1rem;
+  padding: 3rem 3rem 1rem 3rem;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-.footer-info, .footer-links, .footer-social {
-  flex: 1;
   margin-bottom: 2rem;
 }
 
