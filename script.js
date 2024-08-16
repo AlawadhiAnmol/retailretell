@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const text = "Innovating the Heart of Indian Commerce";
+  const typingText = document.getElementById('typing-text');
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      typingText.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeText, 100);
+    }
+  }
+
+  typeText();
+});
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('.section');
   const container = document.querySelector('.section-container');
